@@ -5,6 +5,7 @@ class App{
 
     main(){
         const mouse = new Mouse();
+        const hub = new Hub();
     }
 }
 

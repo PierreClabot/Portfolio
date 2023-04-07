@@ -4,10 +4,14 @@
 @import "base/animations.scss";
 
 // COMPONENTS
+@import "components/mouse.scss";
+@import "components/letter.scss";
+@import "components/popUp.scss";
 
 // LAYOUT
 @import "layout/header.scss";
 @import "layout/hub.scss";
+@import "layout/contact.scss";
 // PAGE
 @import "page/home.scss";
 
@@ -27,14 +31,3 @@ body{
     margin: auto;
 }
 
-.mouse{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #b9aa5757;
-    filter: blur(2px);
-    display: none;
-    transform: translate(-50%,-50%);
-    z-index: 5;
-}

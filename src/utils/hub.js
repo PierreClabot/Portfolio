@@ -1,21 +1,15 @@
-class Mouse{
+class Hub{
     constructor(){
-        this.domMouse = document.querySelector(".mouse");
-        this.icons = document.querySelectorAll(".icon i");
-        document.addEventListener("mousemove",(e)=>{
-            this.domMouse.style.display = "block"
-            this.domMouse.style.left = `${e.clientX}px`;
-            this.domMouse.style.top = `${e.clientY}px`;
-        })
+        this.domMain = document.querySelector(".hub");
+        this.contact = document.querySelector(".title.contact");
+        this.projets = document.querySelector(".title.projets")
+        this.about = document.querySelector(".title.about")
 
-        this.icons.forEach(icon=>{
-            icon.addEventListener("mousemove",function(){
-                this.classList.add("fa-bounce")
-            })
-            icon.addEventListener("mouseleave",function(){
-                // console.log(this.classList.value.search("fa-bounce"))
-                this.classList.remove("fa-bounce");
-            })
+        this.contact.addEventListener("click",(e)=>{
+            var contact = new Contact();
+            console.log("HERE");
         })
     }
+
+
 }

@@ -13,3 +13,121 @@
     }
 
 }
+
+@keyframes appearRightToLeft {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes growUp {
+    0%{
+      bottom: 200px;
+      height: 0px;
+    }
+    100%{
+      bottom: 200px;
+      height: 500px;
+      max-height: 50vh;
+    }
+  }
+
+@keyframes appearBottomToTop {
+0%{
+    opacity: 0;
+}
+50%{
+    transform: translateY(200%);
+    opacity: 0;
+    display: block;
+}
+100%{
+    transform: translateY(0%);
+    opacity: 1;
+
+}
+}
+
+@keyframes animLetter {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(200px);
+    }
+}
+@keyframes animTopLetter {
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(180deg);
+        background: rgb(218, 197, 152);
+    }
+}
+
+@keyframes champsLetter {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes closeLetter {
+    0%{
+        bottom: 200px;
+        height: 500px;
+        max-height: 50vh;
+
+    }
+    100%{
+        bottom: 200px;
+        height: 0px;
+    }
+}
+@keyframes topCloseLetter {
+    0%{
+        transform: rotateX(180deg);
+        background: rgb(218, 197, 152);
+    }
+    100%{
+        transform: rotateX(0deg);
+        background: linear-gradient(169deg, rgb(121, 88, 18) 0%, rgba(245,206,115,1) 100%);
+    }
+}
+
+@keyframes upLetter {
+    0%{
+        transform: translateY(200px);
+        background: rgb(218, 197, 152);
+    }
+    100%{
+        transform: translateY(0px);
+        background: linear-gradient(169deg, rgb(121, 88, 18) 0%, rgba(245,206,115,1) 100%);
+    }
+}
+
+@keyframes fadeOutLetter{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes animInfo {
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.7;
+    }
+}

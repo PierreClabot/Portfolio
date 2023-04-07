@@ -1,0 +1,11 @@
+.popUp{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000, $alpha: 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    animation: appearRightToLeft 1s forwards;
+}
