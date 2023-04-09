@@ -3,6 +3,10 @@ class Contact{
         this.initEmailJS();
         this.domMain = document.querySelector(".hub");
         this.contact = document.querySelector(".title.contact");
+        if(document.querySelector(".popUp.contact"))
+        {
+            document.querySelector(".popUp.contact").remove();
+        }
         this.displayPopUp();
 
         this.popUp = document.querySelector(".popUp");
@@ -40,15 +44,20 @@ class Contact{
         this.inputEmail = document.querySelector("#email");
         this.inputMessage = document.querySelector("#message");
         setTimeout(()=>{
-
-            this.inputEmail.addEventListener("keydown",this.verifEmail.bind(this.this));
-            this.inputEmail.addEventListener("focusout",this.verifEmail.bind(this.this));
-
-            this.inputMessage.addEventListener("keydown",this.verifMessage.bind(this.this));
-            this.inputMessage.addEventListener("focusout",this.verifMessage.bind(this.this));
+            this.eventForm();
 
         },1000)
         
+    }
+
+    eventForm()
+    {
+
+        this.inputEmail.addEventListener("keydown",this.verifEmail.bind(this.this));
+        this.inputEmail.addEventListener("focusout",this.verifEmail.bind(this.this));
+
+        this.inputMessage.addEventListener("keydown",this.verifMessage.bind(this.this));
+        this.inputMessage.addEventListener("focusout",this.verifMessage.bind(this.this));
     }
 
     async sendForm(){
@@ -65,16 +74,15 @@ class Contact{
             }
             var objContact = this.this;
             objContact.animWaitEmail();
-            await emailjs.send("service_vaxpzel","template_428r6mf",formulaire).then(function(res){// service_vaxpzel
+            await emailjs.send("service_vazezaxpzel","template_428r6mf",formulaire).then(function(res){// service_vaxpzel
 
-                objContact.closeSpinner();
-                objContact.animCloseLetter();
+                 objContact.closeSpinner();
+                 objContact.animCloseLetter();
 
             }).catch((error)=>{
                 objContact.messageConfirmation = "Une erreur est survenue, veuillez ressayer."
                 objContact.closeSpinner();
                 objContact.animCloseLetter();
-                objContact.confirm();
             })
             
         }
@@ -127,19 +135,20 @@ class Contact{
         return verifMessage;
     }
     confirm(){
-        document.querySelector(".popUp").innerHTML = `<div class=info><div class=message>${this.messageConfirmation}</div><div class=close><i class="fa-sharp fa-regular fa-circle-xmark" style="color: #dcb208;"></i></div></div>`;
+        //document.querySelector(".popUp").innerHTML = `<div class=info><div class=message>${this.messageConfirmation}</div><div class=close><i class="fa-sharp fa-regular fa-circle-xmark" style="color: #dcb208;"></i></div></div>`;
+        document.querySelector(".popUp").insertAdjacentHTML("beforeend",`<div class=info><div class=message>${this.messageConfirmation}</div></div>`);
         document.querySelector(".close").addEventListener("click",(e)=>{
             this.closeContact();
         })
     }
 
     closeContact(){
-        document.querySelector(".popUp.contact").remove();
+        this.popUp.remove();
         new Hub();
     }
 
     animWaitEmail(){
-        console.log("animWaitEMail")
+        // console.log("animWaitEMail")
         let affichage = `<div class='container-spinner'>
                             <div class="lds-spinner">
                                 <div></div>
@@ -157,7 +166,7 @@ class Contact{
                             </div>
                         </div>`
 
-            this.popUp.innerHTML += affichage;
+            this.popUp.insertAdjacentHTML("beforeend",affichage);
     }
     closeSpinner(){
         document.querySelector(".container-spinner").remove();

@@ -120,6 +120,14 @@
     opacity: 0.7;
   }
 }
+@keyframes fadeInInfo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .mouse {
   position: absolute;
   width: 30px;
@@ -231,6 +239,9 @@
   transform-origin: 100px 0px;
   animation: animTopLetter 1s 1.5s forwards;
 }
+.letter .info {
+  animation: fadeInInfo 0.5s linear forwards;
+}
 
 .popUp {
   display: flex;
@@ -249,6 +260,7 @@
   right: 20px;
   font-size: 3rem;
   cursor: pointer;
+  z-index: 20;
 }
 
 @keyframes fadeInSpinner {
@@ -472,7 +484,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   position: relative;
-  animation: animInfo 2s ease-in-out infinite;
+  animation: animInfo 2s ease-in-out infinite, fadeInInfo 1s linear forwards;
 }
 .contact .info .close {
   cursor: pointer;

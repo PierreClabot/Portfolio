@@ -99,5 +99,9 @@
         transform-origin: 100px 0px;
         animation: animTopLetter 1s 1.5s forwards;
     }
+    
+    .info{
+        animation: fadeInInfo 0.5s linear forwards;
+    }
 
 }

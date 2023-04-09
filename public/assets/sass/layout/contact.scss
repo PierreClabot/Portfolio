@@ -12,7 +12,7 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        animation : animInfo 2s ease-in-out infinite;
+        animation : animInfo 2s ease-in-out infinite, fadeInInfo 1s linear forwards;
         .close{
             cursor: pointer;
             position: absolute;
