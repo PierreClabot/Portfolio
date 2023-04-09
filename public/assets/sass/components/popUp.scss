@@ -8,4 +8,11 @@
     left: 0;
     z-index: 10;
     animation: appearRightToLeft 1s forwards;
+    .close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        cursor: pointer;
+    }
 }

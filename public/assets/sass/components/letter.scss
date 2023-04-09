@@ -1,5 +1,5 @@
 .letter{
-    width: 500px;
+    width: 600px;
     height: 200px;
     // background-color: #dcb253;
     background: rgb(161,119,25);
@@ -15,10 +15,12 @@
         max-width: 500px;
         width: 100%;
         background: #212121;
-        //background: linear-gradient(0deg, rgba(89,89,89,1) 0%, rgba(33,33,33,1) 60%);
+        background: linear-gradient(0deg, rgb(70, 70, 70) 0%, rgba(33,33,33,1) 60%);
         position: absolute;
         border-radius: 10px 10px 0 0;
         bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         animation: growUp 1s forwards;
         animation-delay: 2s;
         opacity: 1;
@@ -43,6 +45,12 @@
             animation-delay: 2.1s;
             width: 60%;
             padding : 0.2rem;
+            background-color: #cecece;
+            outline: none;
+            border: transparent 2px solid;
+            &:focus{
+                border: rgb(170, 119, 10) 2px solid;
+            }
         }
         .label-message{
             animation-delay: 2.2s;
@@ -53,13 +61,25 @@
             resize: none;
             height: 40%;
             padding: 0.5rem;
+            background-color: #cecece;
+            outline: none;
+            border: transparent 2px solid;
+            &:focus{
+                border: rgb(170, 119, 10) 2px solid;
+            }
+        }
+        .erreur{
+            text-align: center;
+            margin: 1rem auto;
+            width: 70%;
+            color: rgb(221,189,118);
         }
         .icon{
             display: flex;
             justify-content: flex-end;
             position: absolute;
-            bottom : 2rem;
-            right: 2rem;
+            bottom : 1rem;
+            right: 1rem;
             cursor: pointer;
             i{
                 animation-delay: 3s;

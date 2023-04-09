@@ -7,7 +7,6 @@ class Hub{
 
         this.contact.addEventListener("click",(e)=>{
             var contact = new Contact();
-            console.log("HERE");
         })
     }
 
